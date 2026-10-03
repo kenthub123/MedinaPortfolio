@@ -1,0 +1,132 @@
+.nav {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 2rem; background: var(--bg);
+  border-bottom: 2px solid var(--fg);
+}
+.logo { font-family: var(--serif); font-weight: 700; font-size: 1.2rem; text-decoration: none; }
+.nav nav { display: flex; gap: 1.5rem; align-items: center; }
+.nav nav a { text-decoration: none; }
+.nav nav a:hover { text-decoration: underline; text-underline-offset: 5px; }
+
+.btn {
+  display: inline-block; cursor: pointer; font: inherit; text-decoration: none;
+  padding: 0.55rem 1.2rem; border: 2px solid var(--fg);
+  background: var(--fg); color: var(--bg);
+  transition: background 0.2s, color 0.2s;
+}
+.btn:hover { background: var(--bg); color: var(--fg); }
+.btn.ghost { background: var(--bg); color: var(--fg); }
+.btn.ghost:hover { background: var(--fg); color: var(--bg); }
+
+.section { max-width: 1000px; margin: 0 auto; padding: 5rem 1.5rem; }
+.section h2 {
+  font-family: var(--serif); font-size: 2.4rem; line-height: 1.1;
+  margin-bottom: 2rem; padding-bottom: 0.6rem; border-bottom: 2px solid var(--fg);
+}
+
+/* Home */
+.hero {
+  display: grid; grid-template-columns: 1fr 280px; gap: 3rem;
+  align-items: center; min-height: 85vh;
+}
+.hero h1 {
+  font-family: var(--serif); font-weight: 700; line-height: 0.95;
+  font-size: clamp(3rem, 9vw, 6.5rem); letter-spacing: -0.03em; margin-bottom: 1.5rem;
+  animation: rise 0.8s ease both;
+}
+.hero p { max-width: 52ch; margin-bottom: 1.8rem; }
+.hero-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+.hero .contact-info { margin-top: 2.5rem; }
+.hero .contact-info p { margin-bottom: 1rem; }
+.avatar {
+  width: 280px;
+  height: 280px;
+  border: 2px solid var(--fg);
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 5rem;
+}
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+/* Projects */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+.project {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--fg);
+  background: var(--bg);
+}
+.project-thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-bottom: 2px solid var(--fg);
+}
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.project-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.2rem;
+}
+.project h3 { font-family: var(--serif); font-size: 1.5rem; }
+.project p { margin: 0.4rem 0 0.8rem; flex: 1; }
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 0.5rem;
+  min-height: 3.8rem;
+  margin-bottom: 0.8rem;
+}
+.tags span { border: 1px solid var(--fg); padding: 0 0.7rem; font-size: 0.85rem; }
+.project a { font-weight: 600; }
+
+/* Contact info (shown in Home) */
+.contact-info p { margin: 0 0 1rem; }
+.socials { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.socials .btn { text-decoration: none; }
+
+/* Contact form */
+.contact-form {
+  display: flex; flex-direction: column; gap: 0.4rem;
+  max-width: 560px;
+}
+.contact-form label { font-weight: 600; margin-top: 0.8rem; }
+.contact-form input,
+.contact-form textarea {
+  font: inherit; padding: 0.65rem 0.8rem;
+  border: 2px solid var(--fg); border-radius: 0;
+  background: var(--bg); color: var(--fg);
+}
+.contact-form textarea { resize: vertical; }
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--fg); outline-offset: 3px;
+}
+.contact-form .btn { align-self: flex-start; margin-top: 1.4rem; }
+
+.footer { text-align: center; padding: 2rem; border-top: 2px solid var(--fg); }
+
+@media (max-width: 760px) {
+  .nav { padding: 0.8rem 1rem; }
+  .nav nav { gap: 0.9rem; font-size: 0.9rem; }
+  .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 3rem; }
+  .avatar { width: 180px; height: 180px; font-size: 3.5rem; order: -1; }
+  .contact-form { max-width: 100%; }
+}
