@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Projects from './components/Projects'
-import Contact from './components/Contact'
+import Certificates from './components/Certificates'
 import './App.css'
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
       <main>
         <Home />
         <Projects />
-        <Contact />
+        <Certificates />
       </main>
       <footer className="footer">
         &copy; {new Date().getFullYear()} Kent Medina

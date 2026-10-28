@@ -5,7 +5,7 @@ export default function Navbar({ theme, toggle }) {
       <nav>
         <a href="#home">Home</a>
         <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="#certificates">Certificates</a>
         <button className="btn ghost" onClick={toggle} aria-label="Toggle dark mode">
           {theme === 'light' ? 'Dark' : 'Light'}
         </button>

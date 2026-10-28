@@ -24,7 +24,7 @@ export default function Home() {
         </p>
         <div className="hero-actions">
           <a href="#projects" className="btn">View projects</a>
-          <a href="#contact" className="btn ghost">Contact me</a>
+          <a href="#certificates" className="btn ghost">View certificates</a>
         </div>
 
         <div className="contact-info">
